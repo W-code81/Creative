@@ -1,25 +1,25 @@
 <template>
-    <footer className="border-t border-white/10 px-6 md:px-12 py-10">
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer class="border-t border-white/10 px-6 md:px-12 py-10">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
 
                 <!-- Word Mark -->
-                <div className="font-display text-[#A8B8C4] text-lg font-semibold">
+                <div class="font-display text-[#A8B8C4] text-lg font-semibold">
                     Creative
                 </div>
 
                 <!-- Nav links -->
-                <nav className="flex flex-wrap justify-center gap-6 text-sm text-[#A8B8C4]">
-                    <a></a>
+                <nav class="flex flex-wrap justify-center gap-6 text-sm text-[#A8B8C4]">
+                    <NuxtLink v-for="item in NAV_LINKS" :key="item.label" :to="item.href">{{ item.label }}</NuxtLink>
                 </nav>
 
                 <!-- Socials + copyright -->
-                <div className="flex flex-col items-center md:items-end gap-3">
-                    <div className="flex items-center gap-4">
+                <div class="flex flex-col items-center md:items-end gap-3">
+                    <div class="flex items-center gap-4">
 
                         <a href="#"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#A8B8C4]"
+                            class="text-[#A8B8C4]"
                             aria-label="Instagram"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -30,7 +30,7 @@
                         <a href="#"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#A8B8C4]"
+                            class="text-[#A8B8C4]"
                             aria-label="TikTok"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -38,23 +38,29 @@
                             </svg>
                         </a>
                     </div>
-                    
-                    <div className="text-xs text-[#A8B8C4]/50">
-                        © {{new Date().getFullYear()}} Creative. All rights reserved.
+
+                    <div class="text-xs text-[#A8B8C4]/50">
+                        © {{currentYear}} Creative. All rights reserved.
                     </div>
                 </div>
             </div> 
             
-             <div className="mt-6 pt-6 border-t border-white/10 text-center text-xs text-[#A8B8C4]/40">
+             <div class="mt-6 pt-6 border-t border-white/10 text-center text-xs text-[#A8B8C4]/40">
                 Powered by
                 <a
                     href="https://w-code81.pxxl.click"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#A8B8C4]"
+                    class="text-[#A8B8C4]"
                 >
                     w-code81
                 </a>
             </div>
         </footer >
 </template>
+
+<script lang="ts" setup>
+import { NAV_LINKS } from '~/constants/navLink';
+
+const currentYear = new Date().getFullYear()
+</script>
