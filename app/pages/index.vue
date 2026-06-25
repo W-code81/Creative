@@ -1,5 +1,7 @@
 <template>
     <Hero/>
+    <SponsorCard/>
+    <BehindDesign/>
 </template>
 
 <script lang="ts" setup>
