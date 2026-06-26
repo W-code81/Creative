@@ -91,12 +91,12 @@
           </div>
 
           <!-- Arrow on hover -->
-          <div class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10
+          <NuxtLink :to="`/projects/${project.slug}`" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10
                       backdrop-blur-sm flex items-center justify-center text-white
                       opacity-0 group-hover:opacity-100 transition-all duration-300
                       group-hover:bg-orange-500">
             →
-          </div>
+          </NuxtLink>
         </div>
       </div>
 
@@ -163,24 +163,28 @@ const categories = [
 
 const projects = [
   {
+    slug: "aura-brand-system",
     title: 'Aura Brand System',
     category: 'Brand Identity',
     year: '2024',
     image: Coat,
   },
   {
+    slug: "sensa-packaging",
     title: 'Sensa Packaging',
     category: 'Packaging',
     year: '2024',
     image: Pef,
   },
   {
+    slug: "volta-campaign",
     title: 'Volta Campaign',
     category: 'Creative Direction',
     year: '2023',
     image: Guy,
   },
   {
+    slug: "melo-identity",
     title: 'Melo Identity',
     category: 'Brand Identity',
     year: '2023',
