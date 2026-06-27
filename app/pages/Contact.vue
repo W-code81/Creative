@@ -1,9 +1,7 @@
 <template>
   <!-- Hero -->
-  <section
-    class="relative h-screen bg-cover bg-center rounded-b-3xl overflow-hidden"
-    :style="{ backgroundImage: `url('/image/img7.jpg')` }"
-  >
+  <section class="relative h-screen bg-cover bg-center rounded-b-3xl overflow-hidden"
+    :style="{ backgroundImage: `url('/image/img7.jpg')` }">
     <div class="flex justify-between items-start px-6 md:px-16 pt-36 md:pt-48">
       <div class="text-white">
         <p class="text-base md:text-lg">Let's work</p>
@@ -25,12 +23,8 @@
     <!-- Info cards pinned to bottom -->
     <div class="absolute bottom-0 left-0 right-0 py-6 px-4 md:px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-        <div
-          v-for="(item, index) in info"
-          :key="index"
-          class="bg-black/40 backdrop-blur-sm px-5 md:px-8 py-5
-                 rounded-xl flex flex-col items-start text-white"
-        >
+        <div v-for="(item, index) in info" :key="index" class="bg-black/40 backdrop-blur-sm px-5 md:px-8 py-5
+                 rounded-xl flex flex-col items-start text-white">
           <span class="text-xs text-white/60 mb-1">
             <span class="text-orange-400">#</span> 0{{ index + 1 }}
           </span>
@@ -55,26 +49,20 @@
 
         <!-- Contact details -->
         <div class="flex flex-col gap-6">
-          <div
-            v-for="(detail, index) in contactDetails"
-            :key="index"
-            class="flex items-start gap-4 border-b border-white/10 pb-6"
-          >
+          <div v-for="(detail, index) in contactDetails" :key="index"
+            class="flex items-start gap-4 border-b border-white/10 pb-6">
             <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10
                         flex items-center justify-center text-orange-400 shrink-0">
-                        
-               <!-- icon component -->
-              <component :is="detail.icon" class="w-4 h-4" /> 
+
+              <!-- icon component -->
+              <component :is="detail.icon" class="w-4 h-4" />
             </div>
             <div>
               <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">
                 {{ detail.label }}
               </p>
-              <a
-                :href="detail.href"
-                class="text-white font-semibold hover:text-orange-400
-                       transition-colors duration-200"
-              >
+              <a :href="detail.href" class="text-white font-semibold hover:text-orange-400
+                       transition-colors duration-200">
                 {{ detail.value }}
               </a>
             </div>
@@ -85,19 +73,12 @@
         <div>
           <p class="text-gray-400 text-sm mb-4">Find me online</p>
           <div class="flex items-center gap-4">
-            <a
-              v-for="social in socials"
-              :key="social.label"
-              :href="social.href"
-              target="_blank"
-              rel="noopener noreferrer"
-              :aria-label="social.label"
-              class="w-10 h-10 rounded-full bg-white/5 border border-white/10
+            <a v-for="social in socials" :key="social.label" :href="social.href" target="_blank"
+              rel="noopener noreferrer" :aria-label="social.label" class="w-10 h-10 rounded-full bg-white/5 border border-white/10
                      flex items-center justify-center text-white/60
                      hover:border-orange-400/60 hover:text-orange-400
-                     transition-all duration-200"
-            >
-            <!-- social icon component -->
+                     transition-all duration-200">
+              <!-- social icon component -->
               <component :is="social.icon" class="w-4 h-4" />
             </a>
           </div>
@@ -113,30 +94,20 @@
             <label class="text-gray-400 text-xs uppercase tracking-widest">
               First Name
             </label>
-            <input
-              v-model="form.firstName"
-              type="text"
-              placeholder="John"
-              class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
+            <input v-model="form.firstName" type="text" placeholder="John" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
                      text-white placeholder:text-white/30 text-sm
                      focus:outline-none focus:border-orange-400/60
-                     transition-colors duration-200"
-            />
+                     transition-colors duration-200" />
           </div>
 
           <div class="flex flex-col gap-2">
             <label class="text-gray-400 text-xs uppercase tracking-widest">
               Last Name
             </label>
-            <input
-              v-model="form.lastName"
-              type="text"
-              placeholder="Doe"
-              class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
+            <input v-model="form.lastName" type="text" placeholder="Doe" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
                      text-white placeholder:text-white/30 text-sm
                      focus:outline-none focus:border-orange-400/60
-                     transition-colors duration-200"
-            />
+                     transition-colors duration-200" />
           </div>
         </div>
 
@@ -144,34 +115,21 @@
           <label class="text-gray-400 text-xs uppercase tracking-widest">
             Email
           </label>
-          <input
-            v-model="form.email"
-            type="email"
-            placeholder="john@example.com"
-            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
+          <input v-model="form.email" type="email" placeholder="john@example.com" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
                    text-white placeholder:text-white/30 text-sm
                    focus:outline-none focus:border-orange-400/60
-                   transition-colors duration-200"
-          />
+                   transition-colors duration-200" />
         </div>
 
         <div class="flex flex-col gap-2">
           <label class="text-gray-400 text-xs uppercase tracking-widest">
             Service
           </label>
-          <select
-            v-model="form.service"
-            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
+          <select v-model="form.service" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
                    text-white text-sm focus:outline-none focus:border-orange-400/60
-                   transition-colors duration-200 appearance-none"
-          >
+                   transition-colors duration-200 appearance-none">
             <option value="" disabled class="bg-zinc-900">Select a service</option>
-            <option
-              v-for="service in services"
-              :key="service"
-              :value="service"
-              class="bg-zinc-900"
-            >
+            <option v-for="service in services" :key="service" :value="service" class="bg-zinc-900">
               {{ service }}
             </option>
           </select>
@@ -181,33 +139,25 @@
           <label class="text-gray-400 text-xs uppercase tracking-widest">
             Message
           </label>
-          <textarea
-            v-model="form.message"
-            rows="5"
-            placeholder="Tell me about your project..."
-            class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
+          <textarea v-model="form.message" rows="5" placeholder="Tell me about your project..." class="bg-white/5 border border-white/10 rounded-xl px-4 py-3
                    text-white placeholder:text-white/30 text-sm
                    focus:outline-none focus:border-orange-400/60
-                   transition-colors duration-200 resize-none"
-          />
+                   transition-colors duration-200 resize-none" />
         </div>
 
-        <button
-          class="bg-orange-500 hover:bg-orange-600 group transition-colors duration-200
-                 text-white px-6 py-3 rounded-full flex items-center justify-between
-                 w-full mt-2"
-          @click="handleSubmit"
-        >
+        <button class="bg-orange-500 hover:bg-orange-600 group transition-colors duration-200
+         text-white px-6 py-3 rounded-full flex items-center justify-between
+         w-full mt-2 disabled:opacity-50 disabled:cursor-not-allowed" :disabled="loading" @click="handleSubmit">
           <span class="font-semibold">
-            {{ submitted ? 'Message Sent!' : 'Send Message' }}
+            {{ loading ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message' }}
           </span>
-          <span
-            class="w-8 h-8 rounded-full group-hover:bg-white/80 bg-white
-                   text-orange-500 flex items-center justify-center"
-          >
+          <span class="w-8 h-8 rounded-full group-hover:bg-white/80 bg-white
+               text-orange-500 flex items-center justify-center">
             {{ submitted ? '✓' : '→' }}
           </span>
         </button>
+
+        <p v-if="error" class="text-red-400 text-sm mt-2">{{ error }}</p>
 
       </div>
     </div>
@@ -229,14 +179,28 @@ const form = ref({
 })
 
 const submitted = ref(false)
+const loading = ref(false)
+const error = ref('')
 
-const handleSubmit = () => {
-  // wire up to your email/API here
-  submitted.value = true
-  setTimeout(() => {
-    submitted.value = false
+const handleSubmit = async () => {
+  loading.value = true
+  error.value = ''
+
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: form.value,
+    })
+
+    submitted.value = true
     form.value = { firstName: '', lastName: '', email: '', service: '', message: '' }
-  }, 3000)
+    setTimeout(() => submitted.value = false, 3000)
+
+  } catch (e) {
+    error.value = 'Something went wrong. Please try again.'
+  } finally {
+    loading.value = false
+  }
 }
 
 const info = [
@@ -276,6 +240,6 @@ const contactDetails = [
 
 const socials = [
   { label: 'Instagram', href: '#', icon: Instagram },
-  { label: 'Twitter',   href: '#', icon: Twitter   },
+  { label: 'Twitter', href: '#', icon: Twitter },
 ]
 </script>
