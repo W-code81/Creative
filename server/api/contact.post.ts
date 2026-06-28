@@ -5,9 +5,6 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const { firstName, lastName, email, service, message } = body
 
-  console.log('USER:', config.emailUser)
-  console.log('PASS:', config.emailPass)
-
   if (!firstName || !email || !message) {
     throw createError({ statusCode: 400, statusMessage: 'Missing required fields' })
   }
